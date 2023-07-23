@@ -8,6 +8,22 @@ namespace Tangrid
     {    
         public static bool ArePairsIntersecting(Pair pairA, Pair pairB)
         {
+            // Check if two line segments have one or more common points (share an endpoint)
+            if (pairA.pointA == pairB.pointA || pairA.pointA == pairB.pointB || pairA.pointB == pairB.pointA || pairA.pointB == pairB.pointB)
+            {
+                // Calculate the direction vectors of the line segments
+                Vector2 _AB = pairA.pointB.transform.position - pairA.pointA.transform.position;
+                Vector2 _CD = pairB.pointB.transform.position - pairB.pointA.transform.position;
+
+                // Calculate the angle between the two segments
+                float angle = Vector2.Angle(_AB, _CD);
+                float angleThreshold = 10f;
+                if (angle > angleThreshold)
+                {
+                    return false;
+                }
+            }
+
             // Calculate the direction vectors of the line segments
             Vector2 AB = pairA.pointB.transform.position - pairA.pointA.transform.position;
             Vector2 CD = pairB.pointB.transform.position - pairB.pointA.transform.position;
@@ -42,7 +58,7 @@ namespace Tangrid
 
 
         // Function to check if a line segment can collide with any line segment in the list
-        public static bool AreCollisionsInList(Pair pair, List<Pair> lineSegments)
+        public static bool AreCollisionsInPairs(Pair pair, List<Pair> lineSegments)
         {
             foreach (var segment in lineSegments)
             {

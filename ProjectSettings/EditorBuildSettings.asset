@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Tangrid/Scenes/MainmenuScene.unity
+    path: Assets/Tangrid/Scenes/MainMenu.unity
+    guid: b1874b640352138468fb7dffc1a3b08e
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_01.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 4dd487e2e1aeab44cba7df8942e5a992, type: 2}

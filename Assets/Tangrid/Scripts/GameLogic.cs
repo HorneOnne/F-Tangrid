@@ -43,7 +43,7 @@ namespace Tangrid
         {
             foreach(var pair in pairs)
             {
-                bool isColliding = LineSegmentCollisionChecker.AreCollisionsInList(pair, pairs);
+                bool isColliding = LineSegmentCollisionChecker.AreCollisionsInPairs(pair, pairs);
                 pairLineMap[pair].isCollided = isColliding;
             }
         }
