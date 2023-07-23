@@ -38,6 +38,7 @@ namespace Tangrid
             if (levelData.isLocking) return;
             SoundManager.Instance.PlaySound(SoundType.Button, false);
             GameManager.Instance.playingLevelData = levelData;
+            GameManager.Instance.currentLevel = levelData.level;
             Loader.LoadLevel(levelData.level);
         }
     }
