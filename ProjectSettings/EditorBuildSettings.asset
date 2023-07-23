@@ -11,5 +11,32 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tangrid/Scenes/Level_01.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_02.unity
+    guid: 80ee27d4909479b41a9eb12fed4d143f
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_03.unity
+    guid: 88425b080824ae244bff59665573d8a9
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_04.unity
+    guid: 38d7edd110d9d0548ac2547b148bdf2d
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_05.unity
+    guid: 5a00880b7d213af4ca273f7854cdf972
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_06.unity
+    guid: 53f6895ef95399947963eea306442229
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_07.unity
+    guid: ed100bdf33eea6944af82feb6e71d6ef
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_08.unity
+    guid: f8d04ae259259734b8fc8117b578a20d
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_09.unity
+    guid: 7864173e705397547bcf5e0b4bfffa37
+  - enabled: 1
+    path: Assets/Tangrid/Scenes/Level_10.unity
+    guid: 62d7b827cd4c4624bb61592fee5cb119
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 4dd487e2e1aeab44cba7df8942e5a992, type: 2}

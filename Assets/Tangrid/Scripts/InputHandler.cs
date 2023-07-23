@@ -4,36 +4,53 @@ namespace Tangrid
 {
     public class InputHandler : MonoBehaviour
     {
-        private Transform dragObject = null;
-        private Vector3 offset;
+        public static InputHandler Instance { get; private set; }
+        private Transform hitObject = null;
         private Camera mainCam;
         [SerializeField] private LayerMask nodeLayer;
+
+        // Cached
+        private GamePlayManager gameplayManager;
+
+        #region Properties
+        public Transform HitObject { get { return hitObject; }  }
+        #endregion
+
+   
+
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         private void Start()
         {
-            mainCam = Camera.main;  
+            gameplayManager = GamePlayManager.Instance;
+            mainCam = Camera.main;
         }
 
         private void Update()
         {
-            if(Input.GetMouseButtonDown(0))
+            if(gameplayManager.currentState == GamePlayManager.GameState.PLAYING)
             {
-                RaycastHit2D hit = Physics2D.Raycast(mainCam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, nodeLayer);
-                if(hit)
+                if (Input.GetMouseButtonDown(0))
                 {
-                    dragObject = hit.transform;
-
-                    offset = dragObject.position - mainCam.ScreenToWorldPoint(Input.mousePosition);
+                    RaycastHit2D hit = Physics2D.Raycast(mainCam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, nodeLayer);
+                    if (hit)
+                    {
+                        hitObject = hit.transform;
+                    }
                 }
-            }
-            else if(Input.GetMouseButtonUp(0))
-            {
-                dragObject = null;
-            }
+                else if (Input.GetMouseButtonUp(0))
+                {
+                    hitObject = null;
+                }
 
-            if (dragObject != null)
-            {
-                dragObject.position = (Vector2)mainCam.ScreenToWorldPoint(Input.mousePosition);
-            }
+                if (hitObject != null)
+                {
+                    hitObject.position = (Vector2)mainCam.ScreenToWorldPoint(Input.mousePosition);
+                }
+            }        
         }
     }
 

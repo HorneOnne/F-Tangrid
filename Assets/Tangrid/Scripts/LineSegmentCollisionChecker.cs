@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tangrid
 {
-    public class LineSegmentCollisionChecker : MonoBehaviour
+    public class LineSegmentCollisionChecker
     {    
         public static bool ArePairsIntersecting(Pair pairA, Pair pairB)
         {

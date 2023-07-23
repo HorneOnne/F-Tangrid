@@ -14,14 +14,17 @@ namespace Tangrid
 
         private void Start()
         {
-         
             LoadLevelUI();
         }
 
-  
+
         private void LoadLevelUI()
-        {            
-           
+        {
+            for (int i = 0; i < GameManager.Instance.TotalGameLevel; i++)
+            {
+                LevelBtn levelBtn = Instantiate(levelBtnPrefab, levelRoot);
+                levelBtn.UpdateUI(GameManager.Instance.levelData[i]);
+            }
         }
     }
 }
